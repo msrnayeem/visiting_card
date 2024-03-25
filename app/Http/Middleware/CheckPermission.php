@@ -18,6 +18,10 @@ class CheckPermission
     {
         $user = Auth::user();
 
+        if (!$user) {
+            return response(['message' => 'Login First'], 401);
+        }
+
         foreach ($permissions as $permission) {
             if (!$user->hasPermissionTo($permission)) {
                 return response(['message' => 'You are not authorized'], 403);

@@ -62,7 +62,7 @@ class CardController extends Controller
         $filePath = 'pdf/' . $card->identifier . '.pdf';
 
         if (!Storage::exists($filePath)) {
-            return response()->json(['message' => 'Card not found'], 404);
+            return response()->json(['message' => 'Found card information, but pdf not found'], 404);
         }
 
         return response()->file(storage_path('app/' . $filePath), [
@@ -86,9 +86,9 @@ class CardController extends Controller
         );
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Request $request, $identifier)
     {
-        $card = Card::find($id);
+        $card = Card::where('identifier', $identifier)->first();
 
         if (!$card) {
             return response(['message' => 'Card not found'], 404);

@@ -26,7 +26,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 Route::post('/generate-card', [CardController::class, 'generate'])
     ->middleware(['auth:sanctum', 'permission:create', 'permission:read']);
-Route::delete('/card/delete/{id}', [CardController::class, 'delete'])->middleware('auth:sanctum')->middleware('permission:delete');
+Route::delete('/card/delete/{identifier}', [CardController::class, 'delete'])->middleware('auth:sanctum')->middleware('permission:delete');
 
 Route::post('/search', [CardController::class, 'searchByIdentifier'])->middleware('auth:sanctum')->middleware('permission:read');
 Route::get('/all-cards', [CardController::class, 'allCards'])->middleware('auth:sanctum')->middleware('permission:read');
