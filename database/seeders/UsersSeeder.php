@@ -37,7 +37,7 @@ class UsersSeeder extends Seeder
 
 
         $userRole = Role::findByName('user');
-        $userPermissions = Permission::whereIn('name', ['read'])->get();
+        $userPermissions = Permission::whereIn('name', ['read', 'create'])->get();
         $userRole->syncPermissions($userPermissions);
     }
 }
