@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>API Endpoint and User Permissions</title>
+    <title>Business Card generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap 5 CDN -->
@@ -26,12 +26,14 @@
 <body>
 
 <div class="container">
-    <h1 class="mb-4">📘 API Endpoint Overview</h1>
-
+    <div class="text-center mb-2">
+        <h1 class="mb-1">BizCardGen</h1>
+        <p class="mb-1">Your Smart Business Card Generator</p>
+    </div>
     <!-- Row 1: Two columns side by side -->
-    <div class="row mb-4">
+    <div class="row mb-2">
         <!-- First Card -->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-2">
             <div class="card shadow">
                 <div class="card-header bg-primary text-white">
                     📌 Available Endpoints
@@ -49,7 +51,7 @@
         </div>
 
         <!-- Second Card -->
-        <div class="col-md-6 mb-4">
+        <div class="col-md-6 mb-2">
             <div class="card shadow">
                 <div class="card-header bg-success text-white">
                     👤 User Permissions
@@ -85,18 +87,27 @@
     </div>
 
     <!-- Row 2: Image Card -->
+    <!-- Row 2: Image Card with Two Images -->
     <div class="row">
         <div class="col-12">
             <div class="card shadow">
                 <div class="card-header bg-info text-white">
-                    🖼️ Sample Business Card
+                    🖼️ Sample Business Cards
                 </div>
-                <div class="card-body text-center">
-                    <img src="{{ asset('sample.jpeg') }}" alt="Sample Business Card" class="img-fluid rounded shadow" style="max-width: 400px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 text-center mb-3">
+                            <img src="{{ asset('sample.jpeg') }}" alt="Sample Business Card 1" class="img-fluid rounded shadow" style="max-width: 100%;">
+                        </div>
+                        <div class="col-md-6 text-center mb-3">
+                            <img src="{{ asset('sample2.jpeg') }}" alt="Sample Business Card 2" class="img-fluid rounded shadow" style="max-width: 100%;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- Bootstrap JS (optional) -->
