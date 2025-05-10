@@ -74,6 +74,13 @@
             </table>
         </div>
     </div>
+
+    <div class="text-center">
+        <h5 class="mt-5">🖼️ Sample Business Card Preview</h5>
+        <img src="{{ asset('sample.jpeg') }}" alt="Sample Business Card" class="img-fluid my-3 rounded shadow" style="max-width: 400px;">
+    </div>
+
+    
 </div>
 
 <!-- Bootstrap JS (optional) -->
